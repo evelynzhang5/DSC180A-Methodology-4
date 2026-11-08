@@ -18,7 +18,9 @@ Classifier-free guidance (CFG), and steering in general: changing what a frozen 
 
 **Describe a potential investigation for your Quarter 2 Project.**
 
-My main idea: **predict whether a steering intervention will help a particular sample, not only whether the sample is going wrong.** In text-to-image models such as Stable Diffusion 1.5, a prompt like "a red mug to the left of a blue bowl" often fails (wrong colors, missing objects, wrong side). I save the intermediate latent at a few points in sampling, branch from it with and without a short intervention (a brief CFG boost, or a targeted push toward "left of" and away from "right of"), and score each final image against the prompt's checklist. That measures repair and collateral damage directly. If choosing the action per sample beats the best fixed rule, I would train a small predictor of the benefit from mid-generation features. My first smoke test showed spatial relations are too hard for SD 1.5 (4% baseline success), so the next step is an easier failure type, such as two-object color binding or counting.
+My main idea that im thinking of is to predict whether a steering intervention will help a particular sample, not only whether the sample is going wrong.
+
+In text-to-image models such as Stable Diffusion 1.5, a prompt like "a red mug to the left of a blue bowl" often fails (wrong colors, missing objects, wrong side). I save the intermediate latent at a few points in sampling, branch from it with and without a short intervention (a brief CFG boost, or a targeted push toward "left of" and away from "right of"), and score each final image against the prompt's checklist. That measures repair and collateral damage directly. If choosing the action per sample beats the best fixed rule, I would train a small predictor of the benefit from mid-generation features.
 
 Other related projects I would consider:
 
